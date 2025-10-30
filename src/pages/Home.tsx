@@ -87,12 +87,12 @@ export default function Home() {
       {/* STACKED DOWNLOAD BUTTONS */}
       <div className="flex flex-col items-center gap-4">
         {[
-          { platform: "Download Flying Chess", link: "#" },
-          { platform: "Download 3 Patti Teen", link: "#" },
-          { platform: "Download 3 Patti Gold", link: "#" },
-          { platform: "Download 3 Patti No 1", link: "#" },
-          { platform: "Download 3 Patti Lucky", link: "#" },
-          { platform: "Download 3 Patti Room", link: "#" },
+          { platform: "Download Flying Chess", link: "https://flyingchess.com/?from_gameid=8418021&channelCode=8307610" },
+          { platform: "Download 3 Patti Teen", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
+          { platform: "Download 3 Patti Gold", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
+          { platform: "Download 3 Patti No 1", link: "https://3pattiteen.com/?from_gameid=8418021&channelCode=8307610" },
+          { platform: "Download 3 Patti Lucky", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
+          { platform: "Download 3 Patti Room", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
         ].map((item, index) => (
           <motion.a
             key={item.platform}
