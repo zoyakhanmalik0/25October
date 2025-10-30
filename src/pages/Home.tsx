@@ -36,6 +36,15 @@ export default function Home() {
     }
   ];
 
+  const downloads = [
+    { platform: 'Windows', link: '#windows' },
+    { platform: 'macOS', link: '#macos' },
+    { platform: 'Android', link: '#android' },
+    { platform: 'iOS', link: '#ios' },
+    { platform: 'Linux', link: '#linux' },
+    { platform: 'Web', link: '#web' }
+  ];
+
   const testimonials = [
     {
       name: 'Sarah Chen',
@@ -61,46 +70,41 @@ export default function Home() {
     <>
       <SEO />
 
-      {/* HERO SECTION */}
-      <section className="relative flex flex-col items-center justify-start pt-28 pb-16 px-4 bg-white text-black">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent opacity-50" />
+
+        <div className="max-w-7xl mx-auto text-center relative z-10 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-              Download Flying Chess AI
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Experience the Future of<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Flying Chess
+              </span>
+              <br />
+              Powered by AI
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-10">
-              Choose your platform to start playing instantly.
+            <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+              Immerse yourself in the ultimate Flying Chess experience with advanced AI technology,
+              stunning visuals, and seamless cross-platform gameplay.
             </p>
 
-            {/* DOWNLOAD BUTTONS */}
-            <div className="flex flex-col items-center gap-4">
-              {[
-                { platform: "Download Flying Chess", link: "https://flyingchess.com/?from_gameid=8418021&channelCode=8307610" },
-                { platform: "Download 3 Patti Teen", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
-                { platform: "Download 3 Patti Gold", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
-                { platform: "Download 3 Patti No 1", link: "https://3pattiteen.com/?from_gameid=8418021&channelCode=8307610" },
-                { platform: "Download 3 Patti Lucky", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
-                { platform: "Download 3 Patti Room", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
-              ].map((item, index) => (
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              {downloads.map((item, index) => (
                 <motion.a
                   key={item.platform}
                   href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group flex items-center justify-center w-80 px-6 py-3 
-                             bg-black text-white rounded-lg border border-black
-                             hover:bg-white hover:text-black transition-all"
+                  className="group relative px-6 py-3 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-lg transition-all"
                 >
-                  <Download className="inline-block w-5 h-5 mr-2 transition-colors" />
-                  <span className="font-medium">{item.platform}</span>
+                  <Download className="inline-block w-5 h-5 mr-2 text-gray-700 group-hover:text-blue-600 transition-colors" />
+                  <span className="text-gray-900 font-medium group-hover:text-blue-600">{item.platform}</span>
                 </motion.a>
               ))}
             </div>
@@ -108,7 +112,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -157,7 +160,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -211,7 +213,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ADSENSE PLACEHOLDER */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-4">
@@ -224,4 +225,3 @@ export default function Home() {
     </>
   );
 }
-
