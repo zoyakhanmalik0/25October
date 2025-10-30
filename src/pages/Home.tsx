@@ -36,15 +36,6 @@ export default function Home() {
     }
   ];
 
-  const downloads = [
-    { platform: 'Windows', link: '#windows' },
-    { platform: 'macOS', link: '#macos' },
-    { platform: 'Android', link: '#android' },
-    { platform: 'iOS', link: '#ios' },
-    { platform: 'Linux', link: '#linux' },
-    { platform: 'Web', link: '#web' }
-  ];
-
   const testimonials = [
     {
       name: 'Sarah Chen',
@@ -69,51 +60,55 @@ export default function Home() {
   return (
     <>
       <SEO />
-      <section className="relative flex flex-col items-center justify-start pt-28 pb-16 px-4 overflow-hidden bg-white text-black">
-  <div className="max-w-4xl mx-auto text-center relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-        Download Flying Chess AI
-      </h1>
 
-      <p className="text-lg sm:text-xl text-gray-600 mb-10">
-        Choose your platform to start playing instantly.
-      </p>
-
-      {/* STACKED DOWNLOAD BUTTONS */}
-      <div className="flex flex-col items-center gap-4">
-        {[
-          { platform: "Download Flying Chess", link: "https://flyingchess.com/?from_gameid=8418021&channelCode=8307610" },
-          { platform: "Download 3 Patti Teen", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
-          { platform: "Download 3 Patti Gold", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
-          { platform: "Download 3 Patti No 1", link: "https://3pattiteen.com/?from_gameid=8418021&channelCode=8307610" },
-          { platform: "Download 3 Patti Lucky", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
-          { platform: "Download 3 Patti Room", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
-        ].map((item, index) => (
-          <motion.a
-            key={item.platform}
-            href={item.link}
+      {/* HERO SECTION */}
+      <section className="relative flex flex-col items-center justify-start pt-28 pb-16 px-4 bg-white text-black">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group flex items-center justify-center w-80 px-6 py-3 
-                       bg-black text-white rounded-lg border border-black
-                       hover:bg-white hover:text-black transition-all"
+            transition={{ duration: 0.8 }}
           >
-            <Download className="inline-block w-5 h-5 mr-2 transition-colors" />
-            <span className="font-medium">{item.platform}</span>
-          </motion.a>
-        ))}
-      </div>
-    </motion.div>
-  </div>
-</section>
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+              Download Flying Chess AI
+            </h1>
 
+            <p className="text-lg sm:text-xl text-gray-600 mb-10">
+              Choose your platform to start playing instantly.
+            </p>
 
+            {/* DOWNLOAD BUTTONS */}
+            <div className="flex flex-col items-center gap-4">
+              {[
+                { platform: "Download Flying Chess", link: "https://flyingchess.com/?from_gameid=8418021&channelCode=8307610" },
+                { platform: "Download 3 Patti Teen", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
+                { platform: "Download 3 Patti Gold", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
+                { platform: "Download 3 Patti No 1", link: "https://3pattiteen.com/?from_gameid=8418021&channelCode=8307610" },
+                { platform: "Download 3 Patti Lucky", link: "https://flyingchess.com/?from_gameid=8477993&channelCode=100000" },
+                { platform: "Download 3 Patti Room", link: "https://flyingchess.com/?from_gameid=8173353&channelCode=100000" },
+              ].map((item, index) => (
+                <motion.a
+                  key={item.platform}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group flex items-center justify-center w-80 px-6 py-3 
+                             bg-black text-white rounded-lg border border-black
+                             hover:bg-white hover:text-black transition-all"
+                >
+                  <Download className="inline-block w-5 h-5 mr-2 transition-colors" />
+                  <span className="font-medium">{item.platform}</span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FEATURES SECTION */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -162,6 +157,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -215,6 +211,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ADSENSE PLACEHOLDER */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-4">
@@ -227,3 +224,4 @@ export default function Home() {
     </>
   );
 }
+
