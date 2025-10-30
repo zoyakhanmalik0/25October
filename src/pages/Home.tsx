@@ -36,13 +36,14 @@ export default function Home() {
     }
   ];
 
+  // ✅ Updated download links in SAME ORDER you gave
   const downloads = [
-    { platform: 'Windows', link: '#windows' },
-    { platform: 'macOS', link: '#macos' },
-    { platform: 'Android', link: '#android' },
-    { platform: 'iOS', link: '#ios' },
-    { platform: 'Linux', link: '#linux' },
-    { platform: 'Web', link: '#web' }
+    { platform: 'Download Flying Chess', link: 'https://flyingchess.com/?from_gameid=8418021&channelCode=8307610' },
+    { platform: 'Download 3 Patti Teen', link: 'https://flyingchess.com/?from_gameid=8173353&channelCode=100000' },
+    { platform: 'Download 3 Patti Gold', link: 'https://flyingchess.com/?from_gameid=8477993&channelCode=100000' },
+    { platform: 'Download 3 Patti No 1', link: 'https://3pattiteen.com/?from_gameid=8418021&channelCode=8307610' },
+    { platform: 'Download 3 Patti Room', link: 'https://flyingchess.com/?from_gameid=8173353&channelCode=100000' },
+    { platform: 'Download 3 Patti Lucky', link: 'https://flyingchess.com/?from_gameid=8477993&channelCode=100000' },
   ];
 
   const testimonials = [
@@ -93,11 +94,14 @@ export default function Home() {
               stunning visuals, and seamless cross-platform gameplay.
             </p>
 
+            {/* ✅ Real Download Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               {downloads.map((item, index) => (
                 <motion.a
                   key={item.platform}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -112,6 +116,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Rest of your code stays the same */}
+
+      {/* FEATURES */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -160,6 +167,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -213,6 +221,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AD SPACE */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl p-4">
